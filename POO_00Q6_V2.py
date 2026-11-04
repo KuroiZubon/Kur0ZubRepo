@@ -32,7 +32,7 @@ class employé(Personnes):
             print(f"Le salaire de {self.prenom} a été mis à jour. Le nouveau salaire est de {self.__salaire} $")
         else:
             print(f"Erreur! Le salaire doit être un montant positif!")
-            
+
     #Encapsulation            
     def se_presenter(self):
         Presentation_base = super().se_presenter()
@@ -98,6 +98,7 @@ print()
 id_Mimi = Mimi.Obtenir_matricule()
 print(f"Le matricule de Mimi est {id_Mimi}")
 exp_Mimi = Mimi.experience()
+print()
 print()
 
 id_Kazu = Kazu.Obtenir_matricule()
