@@ -102,6 +102,3 @@ exp_Kazu = Kazu.experience()
 
 id_Liz = Liz.Obtenir_matricule()
 print(f"Le matricule de Lizzy est {id_Liz}")
-
-salaire_Liz = Liz.Obtenir_salaire()
-print(f"Le salaire de Lizzy est de {salaire_Liz} $")
