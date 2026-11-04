@@ -66,7 +66,7 @@ class CEO(cadre):
 
     def se_presenter(self):
          Presentation_base = super().se_presenter()
-         print(f"{Presentation_base} Je suis le {self.roles} de l'usine Kruger.")
+         return(f"{Presentation_base} Je suis le {self.roles} de l'usine Kruger.")
 
     #Abstraction
     def experience(self):
