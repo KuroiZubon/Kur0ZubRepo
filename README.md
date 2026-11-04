@@ -7,3 +7,5 @@ Prochaine étape clone --> Git pc.
 
 ## Nouvelle ligne -2026_11_02
 Dépôt cloné 1er commit
+
+Premier Stage --> commit--> Push depuis github
