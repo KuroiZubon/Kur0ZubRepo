@@ -83,6 +83,7 @@ membre_usine = [Raj,Liz,Mimi,Kazu]
 
 for membre in membre_usine:
     print(membre.se_presenter())
+print()
 
 id_Raj = Raj.Obtenir_matricule()
 print(f"Le matricule de Raj est {id_Raj}")
@@ -91,14 +92,20 @@ salaire_Raj = Raj.Obtenir_salaire()
 print(f"Le salaire de Raj est {salaire_Raj} $")
 
 nouv_salaire = Raj.Modifier_salaire (nouveau_salaire = 4000)
+print()
 
 id_Mimi = Mimi.Obtenir_matricule()
 print(f"Le matricule de Mimi est {id_Mimi}")
 exp_Mimi = Mimi.experience()
+print()
 
 id_Kazu = Kazu.Obtenir_matricule()
-print (f"Le matricule de Kazuki est {id_Kazu}")
+print (f"Le matricule de Kazuki est {id_Kazu}.")
 exp_Kazu = Kazu.experience()
+print()
 
 id_Liz = Liz.Obtenir_matricule()
-print(f"Le matricule de Lizzy est {id_Liz}")
+print(f"Le matricule de Lizzy est {id_Liz}.")
+
+salaire_Liz = Liz.Obtenir_salaire()
+print(f"Le salaire de Lizzy est de {salaire_Liz} $.")
