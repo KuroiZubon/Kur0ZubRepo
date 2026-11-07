@@ -7,7 +7,7 @@ def menu():
     print("[3] Option 3: Obtenir le salaire d'employé.")
     print("[4] Option 4: Modifier le salaire d'un employé non cadre.")
     print("[5] Option 5: Présentation de l'employé.")
-    print("[6] Option 6: Obtenir l'expérience du cadre.")
+    print("[6] Option 6: Obtenir l'expérience d'un cadre.")
     print("[0] Option 0: Terminer le programme!")
 
 #------------- Listes du personnels ----------------------------------
