@@ -1,6 +1,7 @@
 from POO_00Q6_V2 import*
 
 #------------------ Définition du menu -------------------------------
+#
 def menu():
     print("[1] Option 1: Obtenir le nom complet de l'employé.")
     print("[2] Option 2: Obtenir matricule de l'employé.")
@@ -10,23 +11,29 @@ def menu():
     print("[6] Option 6: Obtenir l'expérience d'un cadre.")
     print("[0] Option 0: Terminer le programme!")
 
-#------------- Listes du personnels ----------------------------------
+#------------- Listes du personnels (objets) -------------------------
+#
 Raj = employes("Pattel", "Raj", 30, "RAJPAT123", "Opérateur", 3000.0)
 Lizzy = employes("Macbeth", "Lizzy", 25, "LIZMACBETH975", "Emballeur",2999.9)
 Mimi = contremaitre("Kotori", "Mimi", 40, "MIKOTORI246", "Contremaitre", 4)
 Kazuki = CEO("Momotaro", "Kazuki", 60, "KAZMOMOTARO680", "CEO", 25)
 
-#----------------- Liste commune ------------------------------------
+#----------------- Liste commune -------------------------------------
+#
 membre_usine = [Raj,Lizzy,Mimi,Kazuki]
 
-#---------------- Définition de fonction ----------------------------
+#---------------- Définition de fonction -----------------------------
+#
 def trouver_employe(prenom):
-#----- Retourne prénom (objet) ou None si prenom n'existe pas. -------
+
+#----- Retourne prénom ou None si le prenom n'existe pas. ------------
+#
     for employe in membre_usine:
         if employe.prenom.lower() == prenom.lower():   # "raj" ou "Raj" fonctionnent
             return employe
     return None
-
+#------------------ Lecture de l'input utilisateur -------------------
+#
 def lire_option():
     while True:
         try:
@@ -105,4 +112,6 @@ while option != 0:
         exit
     menu()
     option = lire_option()
+#----------- Fermeture du programme! ---------------------------------
+#
 print("Fin du programme. Merci d'avoir utilisé le gestionnaire d'employés!")
