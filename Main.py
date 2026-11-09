@@ -13,21 +13,19 @@ def menu():
 
 #------------- Listes du personnels (objets) -------------------------
 #
-Raj = employes("Pattel", "Raj", 30, "RAJPAT123", "Opérateur", 3000.0)
-Lizzy = employes("Macbeth", "Lizzy", 25, "LIZMACBETH975", "Emballeur",2999.9)
-Mimi = contremaitre("Kotori", "Mimi", 40, "MIKOTORI246", "Contremaitre", 4)
+Raj = Employes("Pattel", "Raj", 30, "RAJPAT123", "Opérateur", 3000.0)
+Lizzy = Employes("Macbeth", "Lizzy", 25, "LIZMACBETH975", "Emballeur",2999.9)
+Mimi = Contremaitre("Kotori", "Mimi", 40, "MIKOTORI246", "Contremaitre", 4)
 Kazuki = CEO("Momotaro", "Kazuki", 60, "KAZMOMOTARO680", "CEO", 25)
 
 #----------------- Liste commune -------------------------------------
 #
 membre_usine = [Raj,Lizzy,Mimi,Kazuki]
 
-#---------------- Définition de fonction -----------------------------
-#
-def trouver_employe(prenom):
+#--------------- Définition de fonction ------------------------------
 
-#----- Retourne prénom ou None si le prenom n'existe pas. ------------
-#
+def trouver_employe(prenom):
+ #---- Retourne prénom ou None si le prenom n'existe pas. ------------
     for employe in membre_usine:
         if employe.prenom.lower() == prenom.lower():   # "raj" ou "Raj" fonctionnent
             return employe
@@ -61,25 +59,25 @@ while option != 0:
         print(f" Le nom complet de l'employé est {employe.prenom} {employe.nom}.")
         print()
     elif option == 2:
-        id_perso = employe.Obtenir_matricule()
+        id_perso = employe.obtenir_matricule()
         print(f"Le matricule de {employe.prenom} est {id_perso}")
         print()
     elif option == 3:
         if employe is None:
             print("Erreur! Cet employé n'existe pas!")
             print()
-        elif isinstance(employe, cadre):
+        elif isinstance(employe, Cadre):
             print(f"Erreur! {employe.prenom} est un cadre. Son salaire ne peut pas être obtenu ici!")
             print()
         else:
-            salaire_emp = employe.Obtenir_salaire()
+            salaire_emp = employe.obtenir_salaire()
             print(f"Le salaire de {employe.prenom} est {salaire_emp}")
             print()
     elif option == 4:
         if employe is None:
             print("Erreur! Cet employé n'existe pas!")
             print()
-        elif isinstance(employe, cadre):
+        elif isinstance(employe, Cadre):
             print(f"Erreur! {employe.prenom} est un cadre. Son salaire ne peut pas être modifié ici!")
             print()
         else:                    
@@ -90,11 +88,11 @@ while option != 0:
                     print("Erreur! Veuillez entrer un montant valide!")
                     continue
                 if nouveau_salaire > 0:
-                    employe.Modifier_salaire(nouveau_salaire)
+                    employe.modifier_salaire(nouveau_salaire)
                     break
                 print("Erreur! Le salaire doit être un montant positif!")
                 print()
-    elif option == 5:
+    elif option == 5: # polymorphisme
            presentation = employe.se_presenter()
            print(f"{presentation}")
            print()
@@ -102,7 +100,7 @@ while option != 0:
         if employe is None:
             print("Erreur! Cet employé n'existe pas!")
             print()
-        elif not isinstance(employe, cadre):
+        elif not isinstance(employe, Cadre):
             print(f"Erreur! {employe.prenom} n'est pas un cadre!")
             print()
         else:

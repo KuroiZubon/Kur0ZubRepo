@@ -16,18 +16,18 @@ class Personnes:
     def se_presenter(self):
         return(f"Bonjour, je m'appel {self.prenom} {self.nom} et j'ai {self.age} ans!")
 
-class employes(Personnes):
+class Employes(Personnes):
     def __init__(self, nom, prenom, age, matricule, role, salaire_initial):
         super().__init__(nom, prenom, age, matricule)
         self.__salaire = salaire_initial
         self.role = role
 
     #Getter
-    def Obtenir_salaire(self):
+    def obtenir_salaire(self):
         return self.__salaire
     
     #Setter
-    def Modifier_salaire (self, nouveau_salaire):
+    def modifier_salaire (self, nouveau_salaire):
         if nouveau_salaire > 0:
             self.__salaire = nouveau_salaire
             print(f"Le salaire de {self.prenom} a été mis à jour. Le nouveau salaire est de {self.__salaire} $")
@@ -39,12 +39,12 @@ class employes(Personnes):
         return(f"{Presentation_base} Je suis un {self.role} à l'usine Kruger.")
 
 # Création d'une abstraction pour Cadre
-class cadre(Personnes, ABC):
+class Cadre(Personnes, ABC):
     @abstractmethod
     def experience(self):
         pass
 
-class contremaitre(cadre):
+class Contremaitre(Cadre):
     def __init__(self, nom, prenom, age, matricule, roles, experiences):
         super().__init__(nom, prenom, age, matricule)
         self.experiences = experiences
@@ -56,9 +56,9 @@ class contremaitre(cadre):
     #L'abstraction
     def experience(self):
         super().experience()
-        print(f"{self.prenom} à {self.experiences} années d'expérience comme {self.roles} à l'usine Kruger!")
+        print(f"{self.prenom} a {self.experiences} années d'expérience comme {self.roles} à l'usine Kruger!")
 
-class CEO(cadre):
+class CEO(Cadre):
     def __init__(self, nom, prenom, age, matricule, roles, experiences):
         super().__init__(nom, prenom, age, matricule)
         self.experiences = experiences
@@ -71,4 +71,4 @@ class CEO(cadre):
     #Abstraction
     def experience(self):
         super().experience()
-        print(f"{self.prenom} à {self.experiences} années d'expérience comme {self.roles} à l'usine Kruger!")
+        print(f"{self.prenom} a {self.experiences} années d'expérience comme {self.roles} à l'usine Kruger!")
